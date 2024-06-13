@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F6AFFCB2C1B098600B1ABB0 /* FileExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F6AFFCA2C1B098600B1ABB0 /* FileExample.swift */; };
 		8FF59C9F2C1AF32800F0BF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF59C9E2C1AF32800F0BF15 /* AppDelegate.swift */; };
 		8FF59CA12C1AF32800F0BF15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF59CA02C1AF32800F0BF15 /* SceneDelegate.swift */; };
 		8FF59CA32C1AF32800F0BF15 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF59CA22C1AF32800F0BF15 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8F6AFFCA2C1B098600B1ABB0 /* FileExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileExample.swift; sourceTree = "<group>"; };
 		8FF59C9B2C1AF32800F0BF15 /* RealAppProjectWithUikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealAppProjectWithUikit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF59C9E2C1AF32800F0BF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF59CA02C1AF32800F0BF15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				8FF59C9E2C1AF32800F0BF15 /* AppDelegate.swift */,
 				8FF59CA02C1AF32800F0BF15 /* SceneDelegate.swift */,
 				8FF59CA22C1AF32800F0BF15 /* ViewController.swift */,
+				8F6AFFCA2C1B098600B1ABB0 /* FileExample.swift */,
 				8FF59CA42C1AF32800F0BF15 /* Main.storyboard */,
 				8FF59CA72C1AF32A00F0BF15 /* Assets.xcassets */,
 				8FF59CA92C1AF32A00F0BF15 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F6AFFCB2C1B098600B1ABB0 /* FileExample.swift in Sources */,
 				8FF59CA32C1AF32800F0BF15 /* ViewController.swift in Sources */,
 				8FF59C9F2C1AF32800F0BF15 /* AppDelegate.swift in Sources */,
 				8FF59CA12C1AF32800F0BF15 /* SceneDelegate.swift in Sources */,
