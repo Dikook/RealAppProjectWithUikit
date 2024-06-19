@@ -6,18 +6,11 @@
 //
 
 import UIKit
+import SnapKit
 
 class ViewController: UIViewController {
     
     // MARK: - Outlets
-    private lazy var imageView: UIImageView = {
-        let image = UIImage(named: "sift")
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        
-        return imageView
-    }()
-    
     private lazy var label: UILabel = {
         let label = UILabel()
         label.text = "Hello, World"
@@ -27,9 +20,16 @@ class ViewController: UIViewController {
         return label
     }()
     
-    private lazy var button: UIButton = {
+    private lazy var blackButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Press me", for: .normal)
+        button.setTitle("Круг", for: .normal)
+        
+        return button
+    }()
+    
+    private lazy var greenButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Старт", for: .focused)
         
         return button
     }()
@@ -39,26 +39,29 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupView()
-       // setupLayout()
+        setupLayout()
         
     }
     
-    
     // MARK: - SetupView
     private func setupView() {
-        view.addSubview(button)
-        view.addSubview(label)
-        view.addSubview(imageView)
+        view.addSubview(blackButton)
+        view.addSubview(greenButton)
     }
     
     // MARK: - SetupLayout
-//    private func setupLayout() {
-//        label.snp.makeConstraints{ make in
-//            make.center.equalTo(view)
-//            make.left.equalTo(view).offset(100)
-//            make.right.equalTo(view).offset(-100)
-//        }
-//        
-//    }
+    private func setupLayout() {
+        blackButton.snp.makeConstraints{ make in
+            make.width.equalTo(300)
+            make.height.equalTo(100)
+            make.center.equalToSuperview()
+        }
+        
+        blackButton.snp.makeConstraints{ make in
+            make.width.equalTo(300)
+            make.height.equalTo(100)
+            make.center.equalToSuperview()
+        }
+    }
 }
 
