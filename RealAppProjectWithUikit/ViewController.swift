@@ -8,33 +8,57 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    @IBOutlet weak var button: UIButton!
     
-    @IBOutlet weak var babeLabel: UILabel!
+    // MARK: - Outlets
+    private lazy var imageView: UIImageView = {
+        let image = UIImage(named: "sift")
+        let imageView = UIImageView(image: image)
+        imageView.contentMode = .scaleAspectFit
+        
+        return imageView
+    }()
     
+    private lazy var label: UILabel = {
+        let label = UILabel()
+        label.text = "Hello, World"
+        label.textAlignment = .center
+        label.font = UIFont.boldSystemFont(ofSize: 25)
+        
+        return label
+    }()
+    
+    private lazy var button: UIButton = {
+        let button = UIButton()
+        button.setTitle("Press me", for: .normal)
+        
+        return button
+    }()
+    
+    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        babeLabel.text = "Hello, World@"
-        babeLabel.textColor = .blue
+        setupView()
+       // setupLayout()
         
-        button.backgroundColor = .green
-        button.clipsToBounds = true
-        button.setTitle("Touch me", for: .normal)
-    }
-
-    @IBAction func buttonPressed(_ sender: UIButton) {
-        babeLabel.textColor = getRandomColor()
     }
     
-    func getRandomColor() -> UIColor {
-         // Generate between 0 to 1
-         let red: CGFloat = CGFloat(drand48())
-         let green: CGFloat = CGFloat(drand48())
-         let blue: CGFloat = CGFloat(drand48())
-
-         return UIColor(red: red, green: green, blue: blue, alpha: 1.0)
+    
+    // MARK: - SetupView
+    private func setupView() {
+        view.addSubview(button)
+        view.addSubview(label)
+        view.addSubview(imageView)
     }
+    
+    // MARK: - SetupLayout
+//    private func setupLayout() {
+//        label.snp.makeConstraints{ make in
+//            make.center.equalTo(view)
+//            make.left.equalTo(view).offset(100)
+//            make.right.equalTo(view).offset(-100)
+//        }
+//        
+//    }
 }
 
