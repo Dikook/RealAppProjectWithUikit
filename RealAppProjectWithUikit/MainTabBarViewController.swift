@@ -13,7 +13,15 @@ class MainTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = .white
+        view.backgroundColor = .systemYellow
+        
+        let vc1 = UINavigationController(rootViewController: HomePageViewController())
+        let vc2 = UINavigationController(rootViewController: SoonPageViewController())
+        let vc3 = UINavigationController(rootViewController: DownloadPageViewController())
+        let vc4 = UINavigationController(rootViewController: SearchPageViewController())
+        
+        
+        setViewControllers([vc1, vc2, vc3, vc4], animated: true)
         
     }
     
