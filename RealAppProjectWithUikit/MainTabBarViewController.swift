@@ -20,7 +20,15 @@ class MainTabBarViewController: UITabBarController {
         let vc3 = UINavigationController(rootViewController: DownloadPageViewController())
         let vc4 = UINavigationController(rootViewController: SearchPageViewController())
         
-        
+        vc1.tabBarItem.image = UIImage(systemName: "house")
+        vc2.tabBarItem.image = UIImage(systemName: "play.circle")
+        vc3.tabBarItem.image = UIImage(systemName: "magnifyingglass")
+        vc4.tabBarItem.image = UIImage(systemName: "arrow.down.square")
+
+        vc1.title = "house"
+        vc2.title = "coming soon"
+        vc3.title = "search"
+        vc4.title = "download"
         setViewControllers([vc1, vc2, vc3, vc4], animated: true)
         
     }
