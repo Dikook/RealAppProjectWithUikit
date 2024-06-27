@@ -29,6 +29,9 @@ class MainTabBarViewController: UITabBarController {
         vc2.title = "coming soon"
         vc3.title = "search"
         vc4.title = "download"
+        
+        tabBar.tintColor = .systemPink
+        
         setViewControllers([vc1, vc2, vc3, vc4], animated: true)
         
     }
