@@ -12,6 +12,7 @@
 		8F2E23192C2CBBB5006DFE5D /* SoonPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2E23182C2CBBB5006DFE5D /* SoonPageViewController.swift */; };
 		8F2E231B2C2CBBBE006DFE5D /* DownloadPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2E231A2C2CBBBE006DFE5D /* DownloadPageViewController.swift */; };
 		8F2E231D2C2CBBC4006DFE5D /* SearchPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2E231C2C2CBBC4006DFE5D /* SearchPageViewController.swift */; };
+		8FED5D972C2E1A5D0017E4C0 /* CollectionViewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FED5D962C2E1A5D0017E4C0 /* CollectionViewTableViewCell.swift */; };
 		8FF59C9F2C1AF32800F0BF15 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF59C9E2C1AF32800F0BF15 /* AppDelegate.swift */; };
 		8FF59CA12C1AF32800F0BF15 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF59CA02C1AF32800F0BF15 /* SceneDelegate.swift */; };
 		8FF59CA32C1AF32800F0BF15 /* MainTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF59CA22C1AF32800F0BF15 /* MainTabBarViewController.swift */; };
@@ -37,6 +38,7 @@
 		8F2E23182C2CBBB5006DFE5D /* SoonPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoonPageViewController.swift; sourceTree = "<group>"; };
 		8F2E231A2C2CBBBE006DFE5D /* DownloadPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadPageViewController.swift; sourceTree = "<group>"; };
 		8F2E231C2C2CBBC4006DFE5D /* SearchPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPageViewController.swift; sourceTree = "<group>"; };
+		8FED5D962C2E1A5D0017E4C0 /* CollectionViewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewTableViewCell.swift; sourceTree = "<group>"; };
 		8FF59C9B2C1AF32800F0BF15 /* RealAppProjectWithUikit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RealAppProjectWithUikit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8FF59C9E2C1AF32800F0BF15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8FF59CA02C1AF32800F0BF15 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		8FED5D952C2E1A360017E4C0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8FED5D962C2E1A5D0017E4C0 /* CollectionViewTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		8FF59C922C1AF32800F0BF15 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		8FF59C9D2C1AF32800F0BF15 /* RealAppProjectWithUikit */ = {
 			isa = PBXGroup;
 			children = (
+				8FED5D952C2E1A360017E4C0 /* Views */,
 				8F2E23152C2CBB76006DFE5D /* Controllers */,
 				8FF59C9E2C1AF32800F0BF15 /* AppDelegate.swift */,
 				8FF59CA02C1AF32800F0BF15 /* SceneDelegate.swift */,
@@ -240,6 +251,7 @@
 			files = (
 				8F2E231B2C2CBBBE006DFE5D /* DownloadPageViewController.swift in Sources */,
 				8F2E23172C2CBB9C006DFE5D /* HomePageViewController.swift in Sources */,
+				8FED5D972C2E1A5D0017E4C0 /* CollectionViewTableViewCell.swift in Sources */,
 				8F2E231D2C2CBBC4006DFE5D /* SearchPageViewController.swift in Sources */,
 				8FF59CA32C1AF32800F0BF15 /* MainTabBarViewController.swift in Sources */,
 				8F2E23192C2CBBB5006DFE5D /* SoonPageViewController.swift in Sources */,
