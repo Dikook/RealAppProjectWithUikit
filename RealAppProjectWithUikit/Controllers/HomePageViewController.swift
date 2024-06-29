@@ -10,9 +10,9 @@ import UIKit
 class HomePageViewController: UIViewController {
 
     private let homeFeedTable: UITableView = {
-        let tableView = UITableView()
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
-        return tableView
+        let table = UITableView()
+        table.register(CollectionViewTableViewCell.self, forCellReuseIdentifier: CollectionViewTableViewCell.identifier)
+        return table
     }()
     
     override func viewDidLoad() {
@@ -37,9 +37,11 @@ extension HomePageViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = homeFeedTable.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Hi Mr Bravon"
-        cell.backgroundColor = .green
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CollectionViewTableViewCell.identifier, for: indexPath) as? CollectionViewTableViewCell else {
+            return UITableViewCell()
+        }
+        
         return cell
     }
     
