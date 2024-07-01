@@ -8,86 +8,54 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController, UITableViewDelegate {
     
-    // MARK: - Outlets
-    lazy var redSView = UIView(frame: .zero)
-    lazy var greenSView = UIView(frame: .zero)
-    lazy var blueSView = UIView(frame: .zero)
-    lazy var yellowSView = UIView(frame: .zero)
-    lazy var orangeSView = UIView(frame: .zero)
-    let boxWidth: CGFloat = 100
+    // MARK: - Variable
+    var names: [String] = ["Воспоминание", "Входящий", "Идея", "Планы"]
     
-    private lazy var imageView: UIImageView = {
-        let image = UIImage(named: "sec")
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    // MARK: - UI
+    private lazy var tableView: UITableView = {
+        let tableView = UITableView(frame: .zero, style: .plain)
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        return tableView
     }()
     
-    private lazy var blackButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .gray
-        button.setTitle("Круг", for: .normal)
-        button.layer.cornerRadius = 50
-        return button
-    }()
-    
-    private lazy var greenButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .green
-        button.setTitle("Старт", for: .normal)
-        button.layer.cornerRadius = 50
-        return button
-    }()
     
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
-        setupLayout()
-        
+        setupViews()
+        setupConstraits()
     }
     
-    // MARK: - SetupView
-    private func setupView() {
-        view.backgroundColor = .black
-        
-        redSView.backgroundColor = .red
-        greenSView.backgroundColor = .green
-        blueSView.backgroundColor = .blue
-        yellowSView.backgroundColor = .yellow
-        orangeSView.backgroundColor = .orange
-        
-        [redSView, greenSView, blueSView, yellowSView, orangeSView].forEach { box in
-            view.addSubview(box)
-        }
-        
-        view.addSubview(blackButton)
-        view.addSubview(greenButton)
-        view.addSubview(imageView)
+    // MARK: - Setup Views
+    func setupViews() {
+        view.addSubview(tableView)
     }
     
-    // MARK: - SetupLayout
-    private func setupLayout() {
-        imageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.top.equalTo(-50)
-        }
+    // MARK: - Setup Constraits
+    func setupConstraits() {
         
-        blackButton.snp.makeConstraints { make in
-            make.width.height.equalTo(boxWidth)
-            make.centerY.leading.equalTo(40)
-            make.top.equalTo(476)
-        }
-
-        greenButton.snp.makeConstraints { make in
-            make.width.height.equalTo(boxWidth)
-            make.centerY.right.equalTo(-40)
-            make.top.equalTo(476)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
         }
     }
 }
+
+// MARK: - Extension
+extension ViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return names.count
+    }
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        cell.textLabel?.text = names[indexPath.row]
+        return cell
+    }
+}
+
 
