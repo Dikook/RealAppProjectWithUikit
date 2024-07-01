@@ -8,86 +8,38 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
+final class ViewController: UITableViewController {
     
-    // MARK: - Outlets
-    lazy var redSView = UIView(frame: .zero)
-    lazy var greenSView = UIView(frame: .zero)
-    lazy var blueSView = UIView(frame: .zero)
-    lazy var yellowSView = UIView(frame: .zero)
-    lazy var orangeSView = UIView(frame: .zero)
-    let boxWidth: CGFloat = 100
+    let cellID = "CellID"
+    var products : [Product] = [Product]()
     
-    private lazy var imageView: UIImageView = {
-        let image = UIImage(named: "sec")
-        let imageView = UIImageView(image: image)
-        imageView.contentMode = .scaleAspectFit
-        return imageView
-    }()
-    
-    private lazy var blackButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .gray
-        button.setTitle("Круг", for: .normal)
-        button.layer.cornerRadius = 50
-        return button
-    }()
-    
-    private lazy var greenButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .green
-        button.setTitle("Старт", for: .normal)
-        button.layer.cornerRadius = 50
-        return button
-    }()
-    
-    // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupView()
-        setupLayout()
+        view.backgroundColor = .white
+        createProductArray()
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: cellID)
         
     }
     
-    // MARK: - SetupView
-    private func setupView() {
-        view.backgroundColor = .black
-        
-        redSView.backgroundColor = .red
-        greenSView.backgroundColor = .green
-        blueSView.backgroundColor = .blue
-        yellowSView.backgroundColor = .yellow
-        orangeSView.backgroundColor = .orange
-        
-        [redSView, greenSView, blueSView, yellowSView, orangeSView].forEach { box in
-            view.addSubview(box)
-        }
-        
-        view.addSubview(blackButton)
-        view.addSubview(greenButton)
-        view.addSubview(imageView)
+    
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID, for: indexPath)
+        let currentLastItem = products[indexPath.row]
+        cell.textLabel?.text = currentLastItem.name
+        return cell
     }
     
-    // MARK: - SetupLayout
-    private func setupLayout() {
-        imageView.snp.makeConstraints { make in
-            make.leading.equalToSuperview()
-            make.trailing.equalToSuperview()
-            make.top.equalTo(-50)
-        }
-        
-        blackButton.snp.makeConstraints { make in
-            make.width.height.equalTo(boxWidth)
-            make.centerY.leading.equalTo(40)
-            make.top.equalTo(476)
-        }
-
-        greenButton.snp.makeConstraints { make in
-            make.width.height.equalTo(boxWidth)
-            make.centerY.right.equalTo(-40)
-            make.top.equalTo(476)
-        }
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return products.count
+    }
+    
+    func createProductArray() {
+        products.append(Product(name: "Воспоминание", productDiscription: "Самые сокровенные идеи. Сто вещей до жизни"))
+        products.append(Product(name: "Входящий", productDiscription: "Весь поток информации которые текут к нашему мозгу"))
+        products.append(Product(name: "Идея", productDiscription: "то что нужно сделать когда нибудь. Больше 2 минут"))
+        products.append(Product(name: "Планы", productDiscription: "То что нужно сделать и уже внесен в каленьдар. С местой и с датой"))
     }
 }
 
